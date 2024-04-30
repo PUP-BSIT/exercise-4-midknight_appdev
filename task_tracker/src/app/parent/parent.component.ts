@@ -1,34 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Task } from '../../model/task.model';
-import { ChildComponent } from './child/child.component';
+import { TaskService } from '../task.service';
 
 @Component({
   selector: 'app-parent',
-  standalone: true,
-  imports: [ChildComponent],
   templateUrl: './parent.component.html',
-  styleUrl: './parent.component.css'
+  styleUrls: ['./parent.component.css'],
 })
-export class ParentComponent {
-  task: Task [] = [
-    {
-      id: 1,
-      title: "Title 1",
-      description: "description 1",
-      dueDate: new Date(2024,4,29),
-    },
-    {
-      id: 2,
-      title: "Title 2",
-      description: "description 2",
-      dueDate: new Date(2024,4,29),
-    },
-    {
-      id: 3,
-      title: "Title 3",
-      description: "description 3",
-      dueDate: new Date(2024,4,29),
-    },
-  ]
+export class ParentComponent implements OnInit {
+  tasks: Task[] = [];
 
+  constructor(private taskService: TaskService) {}
+
+  ngOnInit(): void {
+    this.getTasks();
+  }
+
+  getTasks(): void {
+    this.taskService.getTasks().subscribe((tasks) => (this.tasks = tasks));
+  }
 }
