@@ -3,6 +3,7 @@
   <ul>
     <li *ngFor="let task of tasks">
       <app-child [task]="task"></app-child>
+      <button (click)="editTask(task)">Edit</button>
     </li>
   </ul>
 </div>

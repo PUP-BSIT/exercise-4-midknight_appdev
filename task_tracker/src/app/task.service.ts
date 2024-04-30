@@ -43,6 +43,17 @@ export class TaskService {
     this.tasksSubject.next([...currentTasks, task]);
   }
 
+  editTask(updatedTask: Task): void {
+    const currentTasks = this.tasksSubject.getValue();
+    const updatedTasks = currentTasks.map((task) => {
+      if (task.id === updatedTask.id) {
+        return { ...task, ...updatedTask };
+      }
+      return task;
+    });
+    this.tasksSubject.next(updatedTasks);
+  }
+
   getTasks(): Observable<Task[]> {
     return this.tasks$;
   }
