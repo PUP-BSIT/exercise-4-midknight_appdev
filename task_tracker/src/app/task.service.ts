@@ -38,6 +38,11 @@ export class TaskService {
     this.tasksSubject.next(initialTasks);
   }
 
+  addTask(task: Task): void {
+    const currentTasks = this.tasksSubject.getValue();
+    this.tasksSubject.next([...currentTasks, task]);
+  }
+
   getTasks(): Observable<Task[]> {
     return this.tasks$;
   }
