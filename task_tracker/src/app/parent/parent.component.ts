@@ -53,4 +53,9 @@ export class ParentComponent implements OnInit {
       this.selectedTask = null; // Clear the selected task after editing
     }
   }
+
+  deleteTask(task: Task): void {
+    this.taskService.deleteTask(task);
+  }
+  
 }
