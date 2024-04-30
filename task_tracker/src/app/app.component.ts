@@ -5,10 +5,10 @@ import { ParentComponent } from './parent/parent.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,ParentComponent], 
+  imports: [RouterOutlet, ParentComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'task_tracker';
+  title = 'Task Tracker';
 }

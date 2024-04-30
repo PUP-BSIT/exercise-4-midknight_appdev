@@ -6,11 +6,11 @@ import { Task } from '../../../model/task.model';
   standalone: true,
   imports: [],
   templateUrl: './child.component.html',
-  styleUrl: './child.component.css'
+  styleUrl: './child.component.css',
 })
 export class ChildComponent {
-  @Input () task: Task;
-  constructor () {
-    this.task = {id: 0, title:"", description:"", dueDate: new Date}
+  @Input() task: Task;
+  constructor() {
+    this.task = { id: 0, title: '', description: '', dueDate: new Date() };
   }
 }

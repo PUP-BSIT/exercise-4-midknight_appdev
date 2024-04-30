@@ -1,1 +1,6 @@
-<p>parent works!</p>
+<div>
+  <div *ngFor="let task of tasks">
+    <app-child [task]="task"></app-child>
+  </div>
+  <p>parent works!</p>
+</div>
