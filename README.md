@@ -1,3 +1,7 @@
+# Midknight's Task Tracker
+This is a Task tracker where you can add, update, delete, and edit your tasks easily.
+Link: https://tasktrackermidknight.netlify.app/
+
 # ParentChild
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
