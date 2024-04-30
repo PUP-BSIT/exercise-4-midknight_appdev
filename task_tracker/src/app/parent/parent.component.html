@@ -4,9 +4,11 @@
     <li *ngFor="let task of tasks">
       <app-child [task]="task"></app-child>
       <button (click)="editTask(task)">Edit</button>
+      <button (click)="deleteTask(task)">Delete</button>
     </li>
   </ul>
 </div>
+
 
 <div *ngIf="!selectedTask">
   <h2>Add Task</h2>

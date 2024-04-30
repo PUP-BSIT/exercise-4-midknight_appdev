@@ -54,6 +54,12 @@ export class TaskService {
     this.tasksSubject.next(updatedTasks);
   }
 
+  deleteTask(task: Task): void {
+    const currentTasks = this.tasksSubject.getValue();
+    const updatedTasks = currentTasks.filter(t => t !== task);
+    this.tasksSubject.next(updatedTasks);
+  }
+
   getTasks(): Observable<Task[]> {
     return this.tasks$;
   }
